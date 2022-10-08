@@ -3,8 +3,7 @@ import os
 
 from django.conf import settings
 from django.core.management.base import BaseCommand
-
-from reviews.models import Category, Genre, Title, Comment, Review
+from reviews.models import Category, Comment, Genre, Review, Title
 from users.models import User
 
 
