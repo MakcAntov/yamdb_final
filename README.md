@@ -2,7 +2,9 @@
 
 ![workflow](https://github.com/MakcAntov/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
-В этом проекте реализованы настройки для приложения **Continuous Integration** и **Continuous Deployment**:
+**Workflow** — это набор команд, которые выполнятся в виртуальном окружении после того, как произойдёт какое-то событие-триггер.
+
+В этом проекте реализован *Workflow* для приложений **Continuous Integration** и **Continuous Deployment**:
 * автоматический запуск тестов;
 * обновление образов на Docker Hub;
 * автоматический деплой на боевой сервер при `push` в главную ветку *main*.
