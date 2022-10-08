@@ -1,3 +1,3 @@
 # Финальный проект Yamdb_final
 
-![.github/workflows/yamdb_workflow.yml](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)
+![workflow](https://github.com/MakcAntov/yamdb_final/workflows/Yamdb_workflow/badge.svg)
