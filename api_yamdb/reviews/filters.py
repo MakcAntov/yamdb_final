@@ -1,9 +1,5 @@
-from django_filters.rest_framework import (
-    BaseInFilter,
-    CharFilter,
-    NumberFilter,
-    FilterSet,
-)
+from django_filters.rest_framework import (BaseInFilter, CharFilter, FilterSet,
+                                           NumberFilter)
 
 from .models import Title
 

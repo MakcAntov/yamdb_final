@@ -10,7 +10,7 @@ from rest_framework.generics import get_object_or_404
 from rest_framework.validators import UniqueValidator
 from rest_framework_simplejwt.tokens import RefreshToken, TokenError
 
-from .models import User, USER_ROLES
+from .models import USER_ROLES, User
 
 
 def validate_username(username: str) -> None:

@@ -4,15 +4,12 @@ from rest_framework.decorators import action
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
-from rest_framework_simplejwt.views import (
-    TokenObtainPairView,
-    TokenRefreshView,
-)
+from rest_framework_simplejwt.views import (TokenObtainPairView,
+                                            TokenRefreshView)
 
 from .models import ROLE_ADMIN
 from .permissions import IsAdmin
 from .serializers import SingUpSerializer, TokenGetSerializer, UserSerializer
-
 
 User = get_user_model()
 

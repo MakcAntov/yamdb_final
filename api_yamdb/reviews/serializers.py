@@ -3,7 +3,7 @@ from rest_framework import serializers
 from rest_framework.relations import SlugRelatedField
 from rest_framework.serializers import ModelSerializer, SerializerMethodField
 
-from .models import Comment, Category, Genre, Title, Review
+from .models import Category, Comment, Genre, Review, Title
 
 
 class CategorySerializer(ModelSerializer):

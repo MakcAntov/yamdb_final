@@ -1,20 +1,15 @@
 from django.shortcuts import get_object_or_404
 from django_filters.rest_framework import DjangoFilterBackend
-from rest_framework import viewsets, permissions
+from rest_framework import permissions, viewsets
 from rest_framework.viewsets import ModelViewSet
-
 from reviews.filters import CategoryGenreFilter
-from reviews.models import Category, Genre, Title, Review
-from reviews.serializers import (
-    CategorySerializer,
-    GenreSerializer,
-    TitleSerializer,
-    ReviewSerializer,
-    CommentSerializer,
-    WriteTitleSerializer,
-)
+from reviews.models import Category, Genre, Review, Title
+from reviews.serializers import (CategorySerializer, CommentSerializer,
+                                 GenreSerializer, ReviewSerializer,
+                                 TitleSerializer, WriteTitleSerializer)
+
 from .mixins import CategoryGenreMixinsViewSet
-from .permissions import IsAuthorOrAdminOrReadOnly, IsAdminOrReadOnly
+from .permissions import IsAdminOrReadOnly, IsAuthorOrAdminOrReadOnly
 
 
 class CategoryViewSet(CategoryGenreMixinsViewSet):
