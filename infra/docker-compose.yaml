@@ -9,7 +9,7 @@ services:
       - ./.env
   web:
     # build: ../api_yamdb
-    image: makcpracticum/api_yamdb:v8.10.2022
+    image: makcpracticum/api_yamdb:latest
     restart: always
     volumes:
       - static_value:/app/static/
