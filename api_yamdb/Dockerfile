@@ -2,8 +2,8 @@ FROM python:3.7-slim
 
 WORKDIR /app
 
-COPY . .
+COPY ../api_yamdb/ .
 
-RUN pip install -r ./requirements.txt
+RUN pip install -r requirements.txt
 
 CMD python manage.py runserver 0:5000
