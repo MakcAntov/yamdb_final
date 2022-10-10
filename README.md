@@ -11,6 +11,14 @@
 * Пользователи оставляют к произведениям текстовые отзывы **(Review)** и комментарии **(Comment)**, а так же ставят произведению оценку в диапазоне от одного до десяти (целое число);
 * Из пользовательских оценок формируется усреднённая оценка произведения — **рейтинг** (целое число).
 
+## Использованные технологии
+
+- Python
+- Django REST
+- Nginx
+- Postgres
+- Docker
+
 ## Задача проекта
 
 На данном этапе проекта, предполагается написать *Workflow* для приложений **Continuous Integration** и **Continuous Deployment**.
@@ -178,10 +186,10 @@ docker-compose down -v
 ## Где посмотреть?
 
 Когда ВМ запущена, то можно открыть по адресу:
-`https://kvazar.ddns.net/`
+[http://kvazar.ddns.net/](http://kvazar.ddns.net/)
 
 Документация:
-`http://kvazar.ddns.net/redoc`
+[http://kvazar.ddns.net/redoc](http://kvazar.ddns.net/redoc)
 
 ### Контактные данные:
 :octocat: [GitHub](https://github.com/MakcAntov)
