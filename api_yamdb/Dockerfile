@@ -2,8 +2,10 @@ FROM python:3.7-slim
 
 WORKDIR /app
 
-COPY ../api_yamdb/ .
+COPY requirements.txt .
 
-RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt --no-cache-dir
 
-CMD python manage.py runserver 0:5000
+COPY . .
+
+CMD ["gunicorn", "api_yamdb.wsgi:application", "--bind", "0:8000" ]
