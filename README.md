@@ -185,8 +185,8 @@ docker-compose down -v
 ```
 ## Где посмотреть?
 
-Когда ВМ запущена, то можно открыть по адресу:
-[http://kvazar.ddns.net/](http://kvazar.ddns.net/)
+Когда ВМ запущена, то можно открыть сайт и посмотреть список произведений в формате JSON:
+[http://kvazar.ddns.net/api/v1/titles/](http://kvazar.ddns.net/api/v1/titles/)
 
 Документация:
 [http://kvazar.ddns.net/redoc](http://kvazar.ddns.net/redoc)
