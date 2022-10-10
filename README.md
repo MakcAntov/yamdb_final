@@ -181,7 +181,7 @@ docker-compose down -v
 `https://kvazar.ddns.net/`
 
 Документация:
-`https://kvazar.ddns.net/redoc`
+`http://kvazar.ddns.net/redoc`
 
 ### Контактные данные:
 :octocat: [GitHub](https://github.com/MakcAntov)
