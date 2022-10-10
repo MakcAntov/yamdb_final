@@ -48,7 +48,7 @@ jobs:
       - name: Push to Docker Hub
         uses: docker/build-push-action@v2
         with:
-          file: ./api_yamdb/Dockerfile
+          context: api_yamdb
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REP }}:latest
 
@@ -56,6 +56,8 @@ jobs:
     runs-on: ubuntu-latest
 
     needs: build_and_push_to_docker_hub
+
+    if: success() && github.ref == 'refs/heads/master'
 
     steps:
       - name: executing remote ssh commands to deploy
@@ -68,7 +70,6 @@ jobs:
           script: |
             sudo docker compose stop
             sudo docker compose rm web
-            sudo systemctl stop nginx
             touch .env
             echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
             echo DB_NAME=${{ secrets.DB_NAME }} >> .env
@@ -76,7 +77,13 @@ jobs:
             echo POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }} >> .env
             echo DB_HOST=${{ secrets.DB_HOST }} >> .env
             echo DB_PORT=${{ secrets.DB_PORT }} >> .env
-            sudo docker compose up -d
+            sudo docker compose up -d --build
+            sudo docker compose exec web cp redoc.yaml /static/
+            sudo docker compose exec web python manage.py makemigrations
+            sudo docker compose exec web python manage.py migrate --no-input
+            sudo docker compose exec web python manage.py collectstatic --no-input
+            sudo docker compose restart
+
 
   send_message:
     runs-on: ubuntu-latest
