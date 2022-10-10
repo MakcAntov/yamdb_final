@@ -48,7 +48,6 @@ jobs:
       - name: Push to Docker Hub
         uses: docker/build-push-action@v2
         with:
-          # file: ./api_yamdb/Dockerfile
           context: api_yamdb
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REP }}:latest
@@ -79,6 +78,8 @@ jobs:
             echo DB_HOST=${{ secrets.DB_HOST }} >> .env
             echo DB_PORT=${{ secrets.DB_PORT }} >> .env
             sudo docker compose up -d --build
+            sudo docker cp redoc.yaml practicum-kvazar-web-1:/app/static
+            # sudo docker compose exec web cp app/redoc.yaml /static/
             sudo docker compose exec web python manage.py makemigrations
             sudo docker compose exec web python manage.py migrate --no-input
             sudo docker compose exec web python manage.py collectstatic --no-input
